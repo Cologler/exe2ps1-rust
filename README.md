@@ -1,2 +1,3 @@
 # exe2ps1
- Send argv to ps1 from exe
+
+Pass `argv` to `*.ps1` from the `*.exe` executable.
