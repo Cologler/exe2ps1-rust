@@ -1,5 +1,5 @@
 use std::path::Path;
-use std::process::Command;
+use std::process::{Command, exit};
 
 fn main() {
     let curexe = std::env::current_exe().unwrap();
@@ -14,6 +14,7 @@ fn main() {
         if !es.success() {
             std::io::stdin().read_line(&mut String::new()).unwrap_or_default();
         }
+        exit(es.code().unwrap_or(0));
     } else {
         println!("Missing {} file", script.to_str().unwrap());
     }
