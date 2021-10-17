@@ -43,8 +43,5 @@ fn main() -> Result<(), Box<dyn Error>> {
         Err("Missing script file")?
     };
 
-    if !es.success() {
-        std::io::stdin().read_line(&mut String::new()).unwrap_or_default();
-    }
     exit(es.code().unwrap_or(0));
 }
